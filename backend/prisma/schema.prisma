@@ -1,0 +1,80 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  role      UserRole @default(EMPLOYEE)
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  expenses  Expense[]
+  auditLogs AuditLog[]
+
+  @@map("users")
+}
+
+model Expense {
+  id               String        @id @default(cuid())
+  amount           Float
+  category         ExpenseCategory
+  date             DateTime
+  notes            String?
+  status           ExpenseStatus @default(PENDING)
+  receiptUrl       String?
+  rejectionReason  String?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  // Relations
+  userId           String
+  user             User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("expenses")
+}
+
+model AuditLog {
+  id          String   @id @default(cuid())
+  action      String
+  description String
+  timestamp   DateTime @default(now())
+
+  // Relations
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("audit_logs")
+}
+
+enum UserRole {
+  EMPLOYEE
+  ADMIN
+}
+
+enum ExpenseCategory {
+  TRAVEL
+  FOOD
+  EQUIPMENT
+  OFFICE_SUPPLIES
+  SOFTWARE
+  TRAINING
+  OTHER
+}
+
+enum ExpenseStatus {
+  PENDING
+  APPROVED
+  REJECTED
+} 
