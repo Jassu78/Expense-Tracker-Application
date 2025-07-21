@@ -603,11 +603,6 @@ npm run test:watch
     └── 📁 hooks/                        # Hook tests
 ```
 
-### Test Coverage
-
-- **Backend**: 85%+ coverage target
-- **Frontend**: 80%+ coverage target
-- **Critical Paths**: 100% coverage required
 
 ## 🚀 Deployment
 
@@ -720,29 +715,6 @@ docker-compose logs -f backend
 docker-compose logs -f frontend
 ```
 
-## 🤝 Contributing
-
-We welcome contributions! Please follow these guidelines:
-
-### Development Setup
-
-1. **Fork the repository**
-2. **Create a feature branch**
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. **Make your changes**
-4. **Add tests** for new functionality
-5. **Update documentation** if needed
-6. **Commit your changes**
-   ```bash
-   git commit -m "feat: add new feature description"
-   ```
-7. **Push to your branch**
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-8. **Create a Pull Request**
 
 ### Code Style Guidelines
 
@@ -811,14 +783,3 @@ docker-compose down
 docker-compose up --build
 ```
 
-## 🙏 Acknowledgments
-
-- **React Team**: For the amazing React framework
-- **Vite Team**: For the fast build tool
-- **Tailwind CSS**: For the utility-first CSS framework
-- **Prisma Team**: For the excellent ORM
-- **Recharts Team**: For the beautiful charting library
-
----
-
-**For remote teams everywhere** 
