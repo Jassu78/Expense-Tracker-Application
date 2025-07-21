@@ -821,4 +821,4 @@ docker-compose up --build
 
 ---
 
-**Made with ❤️ for remote teams everywhere** 
+**For remote teams everywhere** 
