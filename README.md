@@ -136,7 +136,7 @@ Docker | Docker Compose | Environment Management
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/remote-expense-tracker.git
+git clone https://github.com/Jassu78/Expense-Tracker-Application.git
 cd remote-expense-tracker
 
 # 2. Create environment file
@@ -159,7 +159,7 @@ docker-compose exec backend npm run db:setup
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/remote-expense-tracker.git
+git clone https://github.com/Jassu78/Expense-Tracker-Application.git
 cd remote-expense-tracker
 
 # 2. Install dependencies
